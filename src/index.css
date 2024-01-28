@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  font-family: 'Inter', sans-serif;
+}
+.active{
+  background: rgba(0, 0, 0, .1);
+  border-radius: 0px;
+}
