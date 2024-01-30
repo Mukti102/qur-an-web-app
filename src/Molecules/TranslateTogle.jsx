@@ -1,7 +1,7 @@
 import React from "react";
 function TranslateTogle({ hide, click }) {
   return (
-    <div className="flex items-center px-5 justify-end w-full h-14 border-b-[1px] border-slate-200">
+    <div className="flex lg:shadow-none shadow-md items-center px-5 justify-end w-full h-14 border-b-[1px] border-slate-200">
       <span className="font-bold text-slate-500 w-20 h-max">Translate</span>
       <button
         onClick={click}

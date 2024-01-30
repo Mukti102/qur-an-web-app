@@ -4,9 +4,11 @@ import { Outlet } from "react-router";
 
 function Home() {
   return (
-    <div className="flex w-full min-h-screen overflow-hidden">
+    <div className="flex w-full  min-h-screen overflow-hidden">
       <Sidebar />
-      <Outlet />
+      <div className="lg:block w-full hidden">
+        <Outlet />
+      </div>
     </div>
   );
 }

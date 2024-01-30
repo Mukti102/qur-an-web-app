@@ -7,11 +7,11 @@ function List({ item }) {
       to={`${item?.nomor}`}
       className="flex px-5 border-b-[1px] border-slate-300 py-2 gap-1 w-full hover:bg-[rgba(0,0,0,.1)]"
     >
-      <span className="text-xl  text-primary font-bold mr-2">
+      <span className="text-lg  text-primary font-bold mr-2">
         {item?.nomor}.
       </span>
       <div>
-        <h1 className="text-primary font-bold text-xl">{item?.namaLatin}</h1>
+        <h1 className="text-primary font-bold text-lg">{item?.namaLatin}</h1>
         <span className="text-sm font-semibold text-slate-600">
           {item?.arti}
         </span>

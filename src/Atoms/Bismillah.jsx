@@ -1,7 +1,6 @@
 import React from "react";
 
 function Bismillah({ detailSurat }) {
-  console.log(detailSurat?.namaLatin);
   return (
     <div
       className={`flex justify-center items-center w-full py-10 ${

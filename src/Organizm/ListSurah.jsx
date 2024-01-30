@@ -3,9 +3,12 @@ import List from "../Molecules/List";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "../Utils/CallAPi";
 import Input from "../Molecules/Input";
+import { useParams } from "react-router";
 function ListSurah() {
   const [searchValue, setSearchValue] = useState("");
   const [surats, setSurats] = useState(null);
+  const params = useParams();
+  const id = params.id;
   const fetch = async () => {
     const res = await axiosInstance("surat");
     return res;
@@ -31,8 +34,9 @@ function ListSurah() {
       setSurats(data?.data?.data);
     }
   };
+
   return (
-    <div className="w-[35%] h-screen bg-base-300">
+    <div className={`lg:w-[35%] w-full h-screen bg-base-300`}>
       <div className="flex justify-center items-center h-20 bg-slate-200 shadow-md">
         <Input
           submit={Submit}

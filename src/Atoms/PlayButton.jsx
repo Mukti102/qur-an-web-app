@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
-function PlayButton(detailSurat) {
+function PlayButton({ detailSurat }) {
   const audio = useRef(new Audio());
   const [play, setPlay] = useState(false);
   const handlePlay = () => {
@@ -10,7 +10,7 @@ function PlayButton(detailSurat) {
   };
   useEffect(() => {
     setPlay(false);
-    audio.current.src = detailSurat?.detailSurat?.audioFull["05"];
+    audio.current.src = detailSurat?.audioFull["05"];
   }, [detailSurat]);
   return (
     <button

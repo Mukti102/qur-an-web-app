@@ -4,7 +4,7 @@ import ListSurah from "./ListSurah";
 
 function ReadQuran() {
   return (
-    <div className="w-full h-screen flex">
+    <div className="w-full h-screen lg:flex block">
       <ListSurah />
       <Outlet />
     </div>

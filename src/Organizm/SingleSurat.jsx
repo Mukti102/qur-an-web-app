@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router";
 import { axiosInstance } from "../Utils/CallAPi";
 import { useQuery } from "@tanstack/react-query";
@@ -15,21 +15,27 @@ function SingleSurat() {
     const res = await axiosInstance.get(`surat/${id}`, [id]);
     return res;
   };
+
   const handleHideTarnslate = () => {
     setHideTranslate(!hideTranslate);
   };
+
   const { data } = useQuery({ queryKey: ["surat/", id], queryFn: fetch });
-  useEffect(() => {
+  const memoizedDetailSurat = useMemo(() => {
     if (data) {
-      setDetailSurat(data?.data?.data);
+      return data?.data?.data;
     } else {
-      setDetailSurat(null);
+      return null;
     }
   }, [data]);
+
+  useEffect(() => {
+    setDetailSurat(memoizedDetailSurat);
+  }, [memoizedDetailSurat]);
   return (
-    <div className="w-[70%] h-[75%]">
-      <div className=" flex justify-between px-10 items-center w-full h-20 bg-base-200">
-        <h1 className="font-extrabold text-3xl text-primary">
+    <div className="lg:w-[65%] lg:h-[75%] h-screen w-full">
+      <div className="flex justify-between px-10 items-center w-full h-20 bg-base-200">
+        <h1 className="font-extrabold lg:text-3xl  text-2xl text-primary">
           <span className="mr-3">{detailSurat?.nomor}.</span>
           {detailSurat?.namaLatin}
         </h1>
